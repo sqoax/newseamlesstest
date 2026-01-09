@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seamless POC | Healthcare IT Infrastructure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 60%), radial-gradient(circle at 90% 80%, rgba(2, 6, 23, 1) 0%, transparent 50%)',
+                        'glass': 'linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #ffffff; }
+        
+        /* Auto-Invert the black logo to white for dark mode */
+        .logo-filter {
+            filter: invert(1) brightness(2) drop-shadow(0 0 20px rgba(14, 165, 233, 0.3));
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .border-glass { border: 1px solid rgba(255, 255, 255, 0.08); }
+        
+        .reveal-up {
+            animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .reveal-delay-1 { animation-delay: 0.1s; }
+        .reveal-delay-2 { animation-delay: 0.2s; }
+
+        @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        
+        <div class="absolute inset-0 bg-hero-glow z-0 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-grid z-0 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center pt-10 pb-20">
+            
+            <div class="lg:col-span-6 flex flex-col items-start justify-center reveal-up">
+                <div class="relative w-full max-w-xl group">
+                    <div class="absolute -inset-4 bg-brand-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-1000"></div>
+                    
+                    <img src="Outlook-anflurg5 (1).png" 
+                         alt="Seamless POC" 
+                         class="logo-filter relative z-10 w-full object-contain hover:scale-[1.02] transition-transform duration-500">
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 space-y-12">
+                
+                <div class="space-y-6 reveal-up reveal-delay-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-[11px] font-mono tracking-wide uppercase">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+                        100% Healthcare Focused
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl font-medium tracking-tight leading-[1.1]">
+                        <span class="text-gradient">Order in the</span><br>
+                        <span class="text-white">Clinical Chaos.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-400 max-w-lg leading-relaxed font-light">
+                        We design, install, and maintain the hardware layer of healthcare. 
+                        No cables on the floor. No disrupted workflows. <br>
+                        <span class="text-gray-200">Just workspaces that work.</span>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 reveal-up reveal-delay-2">
+                    <div class="p-4 rounded-xl border-glass bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                        <div class="text-brand-500 mb-2 text-lg">🛠️</div>
+                        <h3 class="text-sm font-medium text-white">Expert Install</h3>
+                        <p class="text-xs text-gray-500 mt-1">Quiet, low-impact deployment.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl border-glass bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                        <div class="text-brand-500 mb-2 text-lg">⚡</div>
+                        <h3 class="text-sm font-medium text-white">Zero-Cable</h3>
+                        <p class="text-xs text-gray-500 mt-1">Infection control compliant.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl border-glass bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                        <div class="text-brand-500 mb-2 text-lg">🔄</div>
+                        <h3 class="text-sm font-medium text-white">Lifecycle</h3>
+                        <p class="text-xs text-gray-500 mt-1">Preventive maintenance plans.</p>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-white/5 reveal-up reveal-delay-2 flex gap-4">
+                    <button class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-lg shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all transform hover:-translate-y-0.5">
+                        Start 15-Min Assessment
+                    </button>
+                    <button class="px-8 py-4 border border-white/10 hover:border-white/30 text-gray-300 hover:text-white rounded-lg transition-all">
+                        View Outcomes
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
