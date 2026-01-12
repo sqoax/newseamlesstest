@@ -1,138 +1,386 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seamless POC | Healthcare IT Infrastructure</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                        },
-                    },
-                    backgroundImage: {
-                        'hero-glow': 'radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 60%), radial-gradient(circle at 90% 80%, rgba(2, 6, 23, 1) 0%, transparent 50%)',
-                        'glass': 'linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)',
-                    }
-                }
-            }
-        }
-    </script>
+    <title>SeamlessPOC | Professional Healthcare IT Hardware Installation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #020617; color: #ffffff; }
-        
-        /* Auto-Invert the black logo to white for dark mode */
-        .logo-filter {
-            filter: invert(1) brightness(2) drop-shadow(0 0 20px rgba(14, 165, 233, 0.3));
+        :root {
+            --primary-blue: #2563eb;
+            --dark-navy: #030712;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --white: #ffffff;
         }
 
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
-        .border-glass { border: 1px solid rgba(255, 255, 255, 0.08); }
-        
-        .reveal-up {
-            animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
+        body {
+            background-color: var(--white);
+            color: var(--text-main);
+            overflow-x: hidden;
         }
-        .reveal-delay-1 { animation-delay: 0.1s; }
-        .reveal-delay-2 { animation-delay: 0.2s; }
 
-        @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #f3f4f6;
+        }
 
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        .logo-container img {
+            height: 70px; /* Large, prominent logo */
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-nav {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 50px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 5% 60px;
+            gap: 60px;
+            min-height: calc(100vh - 250px);
+        }
+
+        .hero-left {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-left h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--dark-navy);
+        }
+
+        .hero-left h1 span {
+            color: var(--primary-blue);
+        }
+
+        .hero-left p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            border: 2px solid #e5e7eb;
+            color: var(--primary-blue);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- CENTER-RIGHT SLIDER --- */
+        .hero-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            cursor: ew-resize;
+        }
+
+        .img-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .before-img {
+            width: 50%;
+            z-index: 2;
+            border-right: 4px solid var(--white);
+        }
+
+        .slider-input {
+            position: absolute;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 10;
+            margin: 0;
+            outline: none;
+        }
+
+        .slider-handle {
+            pointer-events: none;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--white);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 11;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .label {
+            position: absolute;
+            bottom: 30px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 5;
+        }
+
+        /* --- BOTTOM POWER ROW (60/40 Split) --- */
+        .power-row {
+            background: var(--dark-navy);
+            color: var(--white);
+            display: flex;
+            min-height: 140px;
+            align-items: center;
+        }
+
+        .partners-side {
+            width: 65%;
+            padding: 0 5%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .partners-label {
+            font-size: 0.65rem;
+            color: #4b5563;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .logo-track {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            width: calc(200px * 30);
+            animation: scroll 60s linear infinite;
+        }
+
+        .logo-track img {
+            height: 35px;
+            filter: grayscale(100%) brightness(200%);
+            opacity: 0.7;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-200px * 15)); }
+        }
+
+        .stats-side {
+            width: 35%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 3%;
+            border-left: 1px solid #1f2937;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .stat-item p {
+            font-size: 0.7rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
         }
     </style>
 </head>
 <body>
 
-    <main class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        
-        <div class="absolute inset-0 bg-hero-glow z-0 pointer-events-none"></div>
-        <div class="absolute inset-0 bg-grid z-0 pointer-events-none"></div>
+    <header>
+        <div class="logo-container">
+            <img src="seamlessphotologo.png" alt="SeamlessPOC">
+        </div>
+        <nav>
+            <a href="#">Results</a>
+            <a href="#">Services</a>
+            <a href="#">Process</a>
+            <a href="#" class="cta-nav">15-Minute Assessment</a>
+        </nav>
+    </header>
 
-        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center pt-10 pb-20">
+    <main class="hero">
+        <div class="hero-left">
+            <h1>Expert <span>Physical Setup</span> for Clinical IT.</h1>
+            <p>We handle the heavy lifting of healthcare technology—from unboxing and mounting to expert cable management. We create the cleaner, safer workspaces your clinicians deserve[cite: 31, 35, 38].</p>
             
-            <div class="lg:col-span-6 flex flex-col items-start justify-center reveal-up">
-                <div class="relative w-full max-w-xl group">
-                    <div class="absolute -inset-4 bg-brand-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-1000"></div>
-                    
-                    <img src="Outlook-anflurg5 (1).png" 
-                         alt="Seamless POC" 
-                         class="logo-filter relative z-10 w-full object-contain hover:scale-[1.02] transition-transform duration-500">
-                </div>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary">Request Hardware Audit</a>
+                <a href="#" class="btn btn-secondary">View Project Outcomes</a>
             </div>
+        </div>
 
-            <div class="lg:col-span-6 space-y-12">
+        <div class="hero-right">
+            <div class="slider-container">
+                <div class="img-container after-img">
+                    <img src="slidephoto2.png" alt="Seamless Installation">
+                    <div class="label" style="right: 30px;">Seamless</div>
+                </div>
                 
-                <div class="space-y-6 reveal-up reveal-delay-1">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-[11px] font-mono tracking-wide uppercase">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
-                        100% Healthcare Focused
-                    </div>
-                    
-                    <h1 class="text-5xl md:text-6xl font-medium tracking-tight leading-[1.1]">
-                        <span class="text-gradient">Order in the</span><br>
-                        <span class="text-white">Clinical Chaos.</span>
-                    </h1>
-                    
-                    <p class="text-lg text-gray-400 max-w-lg leading-relaxed font-light">
-                        We design, install, and maintain the hardware layer of healthcare. 
-                        No cables on the floor. No disrupted workflows. <br>
-                        <span class="text-gray-200">Just workspaces that work.</span>
-                    </p>
+                <div class="img-container before-img" id="before-box">
+                    <img src="slidephoto1.png" alt="Messy Cables Before">
+                    <div class="label" style="left: 30px;">Before</div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 reveal-up reveal-delay-2">
-                    <div class="p-4 rounded-xl border-glass bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
-                        <div class="text-brand-500 mb-2 text-lg">🛠️</div>
-                        <h3 class="text-sm font-medium text-white">Expert Install</h3>
-                        <p class="text-xs text-gray-500 mt-1">Quiet, low-impact deployment.</p>
-                    </div>
-
-                    <div class="p-4 rounded-xl border-glass bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
-                        <div class="text-brand-500 mb-2 text-lg">⚡</div>
-                        <h3 class="text-sm font-medium text-white">Zero-Cable</h3>
-                        <p class="text-xs text-gray-500 mt-1">Infection control compliant.</p>
-                    </div>
-
-                    <div class="p-4 rounded-xl border-glass bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
-                        <div class="text-brand-500 mb-2 text-lg">🔄</div>
-                        <h3 class="text-sm font-medium text-white">Lifecycle</h3>
-                        <p class="text-xs text-gray-500 mt-1">Preventive maintenance plans.</p>
-                    </div>
-                </div>
-
-                <div class="pt-6 border-t border-white/5 reveal-up reveal-delay-2 flex gap-4">
-                    <button class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-lg shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all transform hover:-translate-y-0.5">
-                        Start 15-Min Assessment
-                    </button>
-                    <button class="px-8 py-4 border border-white/10 hover:border-white/30 text-gray-300 hover:text-white rounded-lg transition-all">
-                        View Outcomes
-                    </button>
-                </div>
-
+                <input type="range" min="0" max="100" value="50" class="slider-input" id="slider-range">
+                <div class="slider-handle" id="slider-handle">↔</div>
             </div>
         </div>
     </main>
 
+    <section class="power-row">
+        <div class="partners-side">
+            <p class="partners-label">Trusted by Leading Health Systems</p>
+            <div class="logo-track">
+                <img src="logos/hospital-01.png" alt="Mayo Clinic">
+                <img src="logos/hospital-02.png" alt="System 2">
+                <img src="logos/hospital-03.png" alt="Johns Hopkins">
+                <img src="logos/hospital-04.png" alt="MGH">
+                <img src="logos/hospital-05.png" alt="UNC Health">
+                <img src="logos/hospital-06.png" alt="Northside">
+                <img src="logos/hospital-07.png" alt="Emory Healthcare">
+                <img src="logos/hospital-08.png" alt="Atrium Health">
+                <img src="logos/hospital-09.png" alt="UCLA">
+                <img src="logos/hospital-10.png" alt="NYU">
+                <img src="logos/hospital-11.png" alt="UCSF">
+                <img src="logos/hospital-12.png" alt="System 12">
+                <img src="logos/hospital-13.png" alt="System 13">
+                <img src="logos/hospital-14.png" alt="System 14">
+                <img src="logos/hospital-15.png" alt="Henry Ford">
+                <img src="logos/hospital-01.png" alt="Mayo Clinic">
+                <img src="logos/hospital-02.png" alt="System 2">
+                <img src="logos/hospital-03.png" alt="Johns Hopkins">
+            </div>
+        </div>
+
+        <div class="stats-side">
+            <div class="stat-item">
+                <h3>25+</h3>
+                <p>Years Exp [cite: 33]</p>
+            </div>
+            <div class="stat-item">
+                <h3>Thousands</h3>
+                <p>Units Installed [cite: 60]</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Med Only [cite: 60]</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const sliderRange = document.getElementById('slider-range');
+        const beforeBox = document.getElementById('before-box');
+        const handle = document.getElementById('slider-handle');
+
+        sliderRange.addEventListener('input', (e) => {
+            const val = e.target.value;
+            beforeBox.style.width = `${val}%`;
+            handle.style.left = `${val}%`;
+        });
+    </script>
 </body>
 </html>
