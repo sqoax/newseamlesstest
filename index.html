@@ -14,20 +14,11 @@
             --white: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
-        body {
-            background-color: var(--white);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
+        body { background-color: var(--white); color: var(--text-main); overflow-x: hidden; }
 
-        /* --- HEADER & NAVIGATION --- */
+        /* --- NAVIGATION --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -40,33 +31,15 @@
             border-bottom: 1px solid #f3f4f6;
         }
 
-        .logo-container img {
-            height: 70px; /* Large, prominent logo */
-            width: auto;
-        }
+        .logo-container img { height: 70px; width: auto; }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 35px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--primary-blue);
-        }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; }
 
         .cta-nav {
             background: var(--primary-blue);
             color: var(--white);
-            padding: 14px 28px;
+            padding: 12px 24px;
             border-radius: 50px;
             box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
         }
@@ -78,66 +51,21 @@
             justify-content: space-between;
             padding: 80px 5% 60px;
             gap: 60px;
-            min-height: calc(100vh - 250px);
+            min-height: 80vh;
         }
 
-        .hero-left {
-            flex: 1;
-            max-width: 600px;
-        }
+        .hero-left { flex: 1; max-width: 550px; }
+        .hero-left h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 25px; color: var(--dark-navy); }
+        .hero-left h1 span { color: var(--primary-blue); }
+        .hero-left p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; }
 
-        .hero-left h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            color: var(--dark-navy);
-        }
+        .hero-btns { display: flex; gap: 15px; }
+        .btn { padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.3s; }
+        .btn-primary { background: var(--primary-blue); color: var(--white); }
+        .btn-secondary { border: 2px solid #e5e7eb; color: var(--primary-blue); }
 
-        .hero-left h1 span {
-            color: var(--primary-blue);
-        }
-
-        .hero-left p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            padding: 18px 36px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .btn-secondary {
-            border: 2px solid #e5e7eb;
-            color: var(--primary-blue);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        /* --- CENTER-RIGHT SLIDER --- */
-        .hero-right {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
+        /* --- BEFORE/AFTER SLIDER --- */
+        .hero-right { flex: 1; display: flex; justify-content: center; }
 
         .slider-container {
             position: relative;
@@ -145,31 +73,14 @@
             max-width: 550px;
             aspect-ratio: 1 / 1;
             overflow: hidden;
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            cursor: ew-resize;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .img-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .img-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .before-img {
-            width: 50%;
-            z-index: 2;
-            border-right: 4px solid var(--white);
-        }
+        .before-img { width: 50%; z-index: 2; border-right: 3px solid white; }
 
         .slider-input {
             position: absolute;
@@ -181,118 +92,60 @@
             z-index: 10;
             margin: 0;
             outline: none;
+            cursor: ew-resize;
         }
 
         .slider-handle {
             pointer-events: none;
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: var(--white);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 11;
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-blue);
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
         .label {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             background: rgba(0,0,0,0.7);
             color: white;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.75rem;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             z-index: 5;
         }
 
-        /* --- BOTTOM POWER ROW (60/40 Split) --- */
-        .power-row {
-            background: var(--dark-navy);
-            color: var(--white);
-            display: flex;
-            min-height: 140px;
-            align-items: center;
-        }
+        /* --- POWER ROW (60/40) --- */
+        .power-row { background: var(--dark-navy); color: var(--white); display: flex; padding: 40px 0; align-items: center; }
+        .partners-side { width: 60%; padding: 0 5%; overflow: hidden; }
+        .partners-label { font-size: 0.65rem; color: #4b5563; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+        .logo-track { display: flex; gap: 50px; align-items: center; width: calc(200px * 20); animation: scroll 40s linear infinite; }
+        .logo-track img { height: 30px; filter: grayscale(100%) brightness(200%); opacity: 0.6; }
 
-        .partners-side {
-            width: 65%;
-            padding: 0 5%;
-            overflow: hidden;
-            position: relative;
-        }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 10)); } }
 
-        .partners-label {
-            font-size: 0.65rem;
-            color: #4b5563;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .logo-track {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            width: calc(200px * 30);
-            animation: scroll 60s linear infinite;
-        }
-
-        .logo-track img {
-            height: 35px;
-            filter: grayscale(100%) brightness(200%);
-            opacity: 0.7;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-200px * 15)); }
-        }
-
-        .stats-side {
-            width: 35%;
-            display: flex;
-            justify-content: space-around;
-            padding: 0 3%;
-            border-left: 1px solid #1f2937;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-        }
-
-        .stat-item p {
-            font-size: 0.7rem;
-            color: #9ca3af;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
+        .stats-side { width: 40%; display: flex; justify-content: space-around; padding: 0 3%; border-left: 1px solid #1f2937; }
+        .stat-item h3 { font-size: 2rem; font-weight: 800; color: var(--primary-blue); }
+        .stat-item p { font-size: 0.65rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="seamlessphotologo.png" alt="SeamlessPOC">
-        </div>
+        <div class="logo-container"><img src="seamlessphotologo.png" alt="SeamlessPOC"></div>
         <nav>
             <a href="#">Results</a>
             <a href="#">Services</a>
@@ -304,11 +157,10 @@
     <main class="hero">
         <div class="hero-left">
             <h1>Expert <span>Physical Setup</span> for Clinical IT.</h1>
-            <p>We handle the heavy lifting of healthcare technology—from unboxing and mounting to expert cable management. We create the cleaner, safer workspaces your clinicians deserve[cite: 31, 35, 38].</p>
-            
+            <p>We handle the unboxing, mounting, and cable chaos that comes with new hardware. We create the cleaner, safer workspaces your clinicians deserve.</p>
             <div class="hero-btns">
                 <a href="#" class="btn btn-primary">Request Hardware Audit</a>
-                <a href="#" class="btn btn-secondary">View Project Outcomes</a>
+                <a href="#" class="btn btn-secondary">Project Outcomes</a>
             </div>
         </div>
 
@@ -316,14 +168,12 @@
             <div class="slider-container">
                 <div class="img-container after-img">
                     <img src="slidephoto2.png" alt="Seamless Installation">
-                    <div class="label" style="right: 30px;">Seamless</div>
+                    <div class="label" style="right: 20px;">Seamless</div>
                 </div>
-                
                 <div class="img-container before-img" id="before-box">
-                    <img src="slidephoto1.png" alt="Messy Cables Before">
-                    <div class="label" style="left: 30px;">Before</div>
+                    <img src="slidephoto1.png" alt="Chaos Before">
+                    <div class="label" style="left: 20px;">Before</div>
                 </div>
-
                 <input type="range" min="0" max="100" value="50" class="slider-input" id="slider-range">
                 <div class="slider-handle" id="slider-handle">↔</div>
             </div>
@@ -335,39 +185,21 @@
             <p class="partners-label">Trusted by Leading Health Systems</p>
             <div class="logo-track">
                 <img src="logos/hospital-01.png" alt="Mayo Clinic">
-                <img src="logos/hospital-02.png" alt="System 2">
+                <img src="logos/hospital-02.png" alt="Partner">
                 <img src="logos/hospital-03.png" alt="Johns Hopkins">
                 <img src="logos/hospital-04.png" alt="MGH">
                 <img src="logos/hospital-05.png" alt="UNC Health">
                 <img src="logos/hospital-06.png" alt="Northside">
-                <img src="logos/hospital-07.png" alt="Emory Healthcare">
-                <img src="logos/hospital-08.png" alt="Atrium Health">
-                <img src="logos/hospital-09.png" alt="UCLA">
-                <img src="logos/hospital-10.png" alt="NYU">
-                <img src="logos/hospital-11.png" alt="UCSF">
-                <img src="logos/hospital-12.png" alt="System 12">
-                <img src="logos/hospital-13.png" alt="System 13">
-                <img src="logos/hospital-14.png" alt="System 14">
-                <img src="logos/hospital-15.png" alt="Henry Ford">
+                <img src="logos/hospital-07.png" alt="Emory">
+                <img src="logos/hospital-08.png" alt="Atrium">
                 <img src="logos/hospital-01.png" alt="Mayo Clinic">
-                <img src="logos/hospital-02.png" alt="System 2">
-                <img src="logos/hospital-03.png" alt="Johns Hopkins">
+                <img src="logos/hospital-02.png" alt="Partner">
             </div>
         </div>
-
         <div class="stats-side">
-            <div class="stat-item">
-                <h3>25+</h3>
-                <p>Years Exp [cite: 33]</p>
-            </div>
-            <div class="stat-item">
-                <h3>Thousands</h3>
-                <p>Units Installed [cite: 60]</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Med Only [cite: 60]</p>
-            </div>
+            <div class="stat-item"><h3>25+</h3><p>Years Exp</p></div>
+            <div class="stat-item"><h3>Thousands</h3><p>Units Installed</p></div>
+            <div class="stat-item"><h3>100%</h3><p>Med Only</p></div>
         </div>
     </section>
 
@@ -376,10 +208,37 @@
         const beforeBox = document.getElementById('before-box');
         const handle = document.getElementById('slider-handle');
 
-        sliderRange.addEventListener('input', (e) => {
-            const val = e.target.value;
+        let isUserInteracting = false;
+        let animationFrame;
+
+        // Visual Cue: Auto-Sweep Animation
+        function animateSlider() {
+            if (isUserInteracting) return;
+            
+            const time = Date.now() / 1000;
+            // Moves the slider in a smooth wave between 35% and 65%
+            const value = 50 + Math.sin(time * 2) * 15;
+            
+            updateSlider(value);
+            animationFrame = requestAnimationFrame(animateSlider);
+        }
+
+        function updateSlider(val) {
             beforeBox.style.width = `${val}%`;
             handle.style.left = `${val}%`;
+            sliderRange.value = val;
+        }
+
+        // Kill animation as soon as user touches it
+        sliderRange.addEventListener('input', (e) => {
+            isUserInteracting = true;
+            cancelAnimationFrame(animationFrame);
+            updateSlider(e.target.value);
+        });
+
+        // Start animation on load
+        window.addEventListener('load', () => {
+            setTimeout(animateSlider, 1000); // Wait 1 second after load to start "peek"
         });
     </script>
 </body>
