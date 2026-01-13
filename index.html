@@ -112,9 +112,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 60px 5% 30px;
-            gap: 70px;
-            min-height: calc(100vh - 250px);
+            padding: 50px 5% 30px;
+            gap: 60px;
+            min-height: calc(100vh - 320px);
             background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
         }
 
@@ -136,10 +136,10 @@
         }
 
         .hero-left h1 { 
-            font-size: 3.2rem; 
+            font-size: 3rem; 
             font-weight: 700; 
             line-height: 1.1; 
-            margin-bottom: 20px; 
+            margin-bottom: 18px; 
             color: var(--dark);
             letter-spacing: -0.02em;
         }
@@ -149,9 +149,9 @@
         }
         
         .hero-left p { 
-            font-size: 1.15rem; 
+            font-size: 1.1rem; 
             color: var(--gray-600); 
-            margin-bottom: 30px; 
+            margin-bottom: 28px; 
             line-height: 1.6; 
         }
 
@@ -318,13 +318,12 @@
             display: flex; 
             gap: 60px; 
             align-items: center;
-            width: calc(200px * 20);
-            animation: scroll 40s linear infinite;
+            animation: scroll 30s linear infinite;
         }
         
         @keyframes scroll { 
             0% { transform: translateX(0); } 
-            100% { transform: translateX(calc(-200px * 10)); } 
+            100% { transform: translateX(-50%); } 
         }
         
         .logo-track img { 
@@ -1146,7 +1145,7 @@
                 <img src="logos/hospital-06.png" alt="Healthcare Partner">
                 <img src="logos/hospital-07.png" alt="Healthcare Partner">
                 <img src="logos/hospital-08.png" alt="Healthcare Partner">
-                <!-- Duplicate for seamless loop -->
+                <!-- Duplicate set for seamless infinite loop -->
                 <img src="logos/hospital-01.png" alt="Healthcare Partner">
                 <img src="logos/hospital-02.png" alt="Healthcare Partner">
                 <img src="logos/hospital-03.png" alt="Healthcare Partner">
